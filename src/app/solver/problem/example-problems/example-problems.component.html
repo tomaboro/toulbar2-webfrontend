@@ -1,0 +1,26 @@
+<div class="col">
+  <div class="row pull-right">
+    <div class="btn-group" appDropdown>
+      <button type="button" class="btn btn-primary  dropdown-toggle">Select example <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onReloadExample(1)">1</a></li>
+        <li><a (click)="onReloadExample(2)">2</a></li>
+        <li><a (click)="onReloadExample(3)">3</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <h1> {{ exampleTitle }}</h1>
+    <p> {{ exampleDescrition}}</p>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="btn-group-justified">
+        <a class="btn btn-warning" [attr.href]="exampleHref" download>Download</a>
+        <label class="btn btn-success" (click)="onSend()">Send</label>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

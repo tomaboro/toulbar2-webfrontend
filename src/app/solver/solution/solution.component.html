@@ -1,0 +1,63 @@
+<div *ngIf="responseContent === null">
+  <h1>Solution</h1>
+  <div style="text-align: center;">
+    <img src="http://cdn.shopify.com/s/files/1/1061/1924/products/Sad_Face_Emoji_grande.png?v=1480481055" height="100"
+         width="100"/>
+    <h2>There is nothing to load</h2>
+  </div>
+</div>
+<div *ngIf="responseContent != null">
+  <div *ngIf="failed">
+    <h1>Error</h1>
+  </div>
+  <div *ngIf="!failed">
+    <h1>Solution</h1>
+  </div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of responseContent.arguments">
+      <td>{{item.name}}</td>
+      <td>{{item.value}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <tbody>
+    <tr class="info">
+      <td>Weight</td>
+      <td>{{responseContent.wage}}</td>
+    </tr>
+    <tr *ngIf="responseContent.time < 15" class="success">
+      <td>Time</td>
+      <td>{{responseContent.time}}</td>
+    </tr>
+    <tr *ngIf="responseContent.time < 30 && responseContent.time > 15" class="warning">
+      <td>Time</td>
+      <td>{{responseContent.time}}</td>
+    </tr>
+    <tr *ngIf="responseContent.time > 30" class="danger">
+      <td>Time</td>
+      <td>{{responseContent.time}}</td>
+    </tr>
+    <tr *ngIf="responseContent.memory < 15" class="success">
+      <td>Memory</td>
+      <td>{{responseContent.memory}}</td>
+    </tr>
+    <tr *ngIf="responseContent.memory < 30 && responseContent.memory > 15" class="warning">
+      <td>Memory</td>
+      <td>{{responseContent.memory}}</td>
+    </tr>
+    <tr *ngIf="responseContent.memory > 30" class="danger">
+      <td>Memory</td>
+      <td>{{responseContent.memory}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,23 @@
+<div class="col">
+  <div class="row">
+    <h2>Select File</h2>
+    <input id="myInput" type="file" style="visibility:hidden"/>
+    <div class="form-group">
+      <label for="usr">Selected file:</label>
+      <input type="text" class="form-control" id="usr" [value]="selectedFile" disabled>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div class="btn-group btn-group-justified">
+          <a class="btn btn-warning" [ngxFilePicker]="readMode" (filePick)="onFilePicked($event)">Browse</a>
+          <a class="btn btn-success" (click)="onSolve()">Solve</a>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </div>
+</div>
+
