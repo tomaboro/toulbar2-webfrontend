@@ -9,47 +9,10 @@ import {RuleComponent} from './rule/rule.component';
 export class ProblemLoaderComponent implements OnInit, AfterViewInit {
   constructor() { }
 
-  @ViewChildren(RuleComponent)
-  private components: QueryList<RuleComponent>  ;
+  type = 'wcsp';
 
-  rules = [0];
-  variables = [1, 1, 1];
-
-  onAddRule() {
-    this.rules.push(this.rules.length);
-  }
-
-  onSend() {
-  }
-
-  onRemoveVariable() {
-    if (this.variables.length > 1) {
-      this.variables.splice(this.variables.length - 1,  1);
-    }
-  }
-
-  onAddVariable() {
-    this.variables.push(1);
-  }
-  onVariablesAmountChange(event) {
-    if (event.srcElement.value < this.variables.length) {
-      this.variables.splice(0, this.variables.length - event.srcElement.value);
-    } else {
-      for (let _i = 0; _i <= event.srcElement.value - this.variables.length; _i++) {
-        this.variables.push(1);
-      }
-    }
-    console.log(event.srcElement.value);
-    console.log(this.variables.length);
-  }
-
-  onRuleDelete(index: number) {
-    if (this.rules.length > 1) {
-      this.rules.splice(this.rules.indexOf(index), 1);
-    }
-  }
-
-  onDownload() {
+  onTypeChange(nType: string) {
+    this.type = nType;
   }
 
   ngOnInit() {

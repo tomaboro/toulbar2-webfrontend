@@ -1,0 +1,26 @@
+<h2>Variables</h2>
+<div class="row">
+  <div class="col-sm-4">Variables ammount:</div>
+  <div class="col-sm-8"> <a class="btn btn-primary" (click)="onRemoveVariable()">-</a>   {{variables.length}}   <a class="btn btn-primary" (click)="onAddVariable()">+</a></div>
+</div>
+<div class="row" style="padding-top: 5px;">
+  <div class="col-sm-4">Variables names:</div>
+  <div class="col-sm-8"><app-wcn-variable *ngFor="let v of variables"></app-wcn-variable></div>
+</div>
+<h2>Functions</h2>
+<app-wcnf-rule *ngFor="let num of rules" (delete)="onRuleDelete($event)" [index]="num"></app-wcnf-rule>
+<div class="row">
+  <div class="pull-right">
+    <label class="btn btn-primary" (click)="onAddRule()">Add</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <div class="btn-group-justified">
+      <label class="btn btn-warning" (click)="onDownload()">Download</label>
+      <label class="btn btn-success" (click)="onSend()">Send</label>
+    </div>
+  </div>
+  <div class="col-sm-2"></div>
+</div>

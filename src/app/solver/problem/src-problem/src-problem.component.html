@@ -8,6 +8,18 @@
     </div>
   </div>
   <div class="row">
+    <div class="col">
+      Problem type:
+      <div class="btn-group" appDropdown>
+        <button type="button" class="btn btn-primary  dropdown-toggle"> {{ type }} <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a (click)="onTypeChange('wcsp')">wcsp</a></li>
+          <li><a (click)="onTypeChange('wcnf')">wcnf</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 15px;">
     <div class="row">
       <div class="col-sm-2"></div>
       <div class="col-sm-8">
@@ -20,4 +32,5 @@
     </div>
   </div>
 </div>
+
 

@@ -1,29 +1,15 @@
 <div class="col" xmlns="http://www.w3.org/1999/html">
   <h1>Problem loader</h1>
-   <h2>Zmienne</h2>
-  <div class="row">
-    <div class="col-sm-4">Liczba zmiennych:</div>
-    <div class="col-sm-8"> <a class="btn btn-primary" (click)="onRemoveVariable()">-</a>   {{variables.length}}   <a class="btn btn-primary" (click)="onAddVariable()">+</a></div>
-  </div>
-  <div class="row" style="padding-top: 5px;">
-    <div class="col-sm-4">Nazwy zmiennych:</div>
-    <div class="col-sm-8"><input *ngFor="let v of variables" size="4"></div>
-  </div>
-  <h2>Funkcje</h2>
-  <app-rule *ngFor="let num of rules" (delete)="onRuleDelete($event)" [index]="num"></app-rule>
-  <div class="row">
-    <div class="pull-right">
-      <label class="btn btn-primary" (click)="onAddRule()">Add</label>
+  <div class="row pull-right">
+    Problem type:
+  <div class="btn-group" appDropdown>
+    <button type="button" class="btn btn-primary  dropdown-toggle"> {{ type }} <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onTypeChange('wcsp')">wcsp</a></li>
+        <li><a (click)="onTypeChange('wcnf')">wcnf</a></li>
+      </ul>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
-      <div class="btn-group-justified">
-        <label class="btn btn-warning" (click)="onDownload()">Download</label>
-        <label class="btn btn-success" (click)="onSend()">Send</label>
-      </div>
-    </div>
-    <div class="col-sm-2"></div>
-  </div>
+  <app-wcnf *ngIf="type === 'wcnf'"></app-wcnf>
+  <app-wscp *ngIf="type === 'wcsp'"></app-wscp>
 </div>

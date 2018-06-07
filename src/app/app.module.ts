@@ -16,6 +16,12 @@ import { HttpClientModule } from '@angular/common/http';
 import {DropdownDirective} from './shared/dropdown.directive';
 import { RuleComponent } from './solver/problem/problem-loader/rule/rule.component';
 import { FileHelpersModule } from 'ngx-file-helpers';
+import { WscpComponent } from './solver/problem/problem-loader/wscp/wscp.component';
+import { WcnfComponent } from './solver/problem/problem-loader/wcnf/wcnf.component';
+import {WscpRuleComponent} from './solver/problem/problem-loader/wscp/wscp-rule/wscp-rule.component';
+import { WscpVariableComponent } from './solver/problem/problem-loader/wscp/wscp-variable/wscp-variable.component';
+import { WcnfRuleComponent } from './solver/problem/problem-loader/wcnf/wcnf-rule/wcnf-rule.component';
+import { WcnVariableComponent } from './solver/problem/problem-loader/wcnf/wcn-variable/wcn-variable.component';
 
 
 const appRoutes: Routes = [
@@ -39,7 +45,13 @@ const appRoutes: Routes = [
     ProblemLoaderComponent,
     SrcProblemComponent,
     DropdownDirective,
-    RuleComponent
+    RuleComponent,
+    WscpComponent,
+    WcnfComponent,
+    WscpRuleComponent,
+    WscpVariableComponent,
+    WcnfRuleComponent,
+    WcnVariableComponent
   ],
   imports: [
     BrowserModule,

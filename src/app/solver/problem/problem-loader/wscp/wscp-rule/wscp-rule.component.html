@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="btn-group" appDropdown>
+    <button type="button" class="btn btn-primary  dropdown-toggle">{{selectedFunction}} <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li *ngFor="let fun of functions" (click)="onFunctionSelected(fun)"><a>{{fun}}</a></li>
+    </ul>
+  </div>
+  <input type="text" [(ngModel)]="content"/>
+  <input type="number" size="2" [(ngModel)]="weight"/>
+  <div class="pull-right">
+    <label class="btn btn-danger" (click)="onDelete()">Del</label>
+  </div>
+</div>

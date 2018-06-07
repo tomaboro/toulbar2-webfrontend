@@ -11,12 +11,17 @@ export class SrcProblemComponent implements OnInit {
   readMode = ReadMode.text;
   selectedFile = '';
   selectedFileContent = '';
+  type = 'wcnf';
 
   constructor(private serverService: ServerService) {
   }
 
   onSolve() {
-    this.serverService.sendSolveFileRequest(this.selectedFileContent);
+    this.serverService.sendSolveFileRequest(this.selectedFileContent, this.type);
+  }
+
+  onTypeChange(nType) {
+    this.type = nType;
   }
 
   onFilePicked(file: ReadFile) {
