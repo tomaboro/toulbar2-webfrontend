@@ -21,7 +21,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let item of responseContent.arguments">
+    <tr *ngFor="let item of responseContent.variables">
       <td>{{item.name}}</td>
       <td>{{item.value}}</td>
     </tr>
@@ -31,8 +31,8 @@
   <table class="table">
     <tbody>
     <tr class="info">
-      <td>Weight</td>
-      <td>{{responseContent.wage}}</td>
+      <td>Satisfied percentage</td>
+      <td>{{responseContent.accomplishementPercentage}}</td>
     </tr>
     <tr *ngIf="responseContent.time < 15" class="success">
       <td>Time</td>
@@ -47,15 +47,15 @@
       <td>{{responseContent.time}}</td>
     </tr>
     <tr *ngIf="responseContent.memory < 15" class="success">
-      <td>Memory</td>
+      <td>Backtrack number</td>
       <td>{{responseContent.memory}}</td>
     </tr>
     <tr *ngIf="responseContent.memory < 30 && responseContent.memory > 15" class="warning">
-      <td>Memory</td>
+      <td>Backtrack number</td>
       <td>{{responseContent.memory}}</td>
     </tr>
     <tr *ngIf="responseContent.memory > 30" class="danger">
-      <td>Memory</td>
+      <td>Backtrack number</td>
       <td>{{responseContent.memory}}</td>
     </tr>
     </tbody>

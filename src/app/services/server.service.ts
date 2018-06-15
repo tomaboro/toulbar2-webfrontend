@@ -10,10 +10,14 @@ import {WscpRequest} from '../model/model.wscpRequest';
 export class ServerService {
   constructor(private http: HttpClient) {}
   private subject = new Subject<any>();
-  private endpointUrl = 'https://ae82ba16-c999-4987-969e-315808cd15b5.mock.pstmn.io/TOULBAR2REST';
+  //private endpointUrl = 'https://77.55.216.72:8080/toulbar2rest';
+  //private endpointUrl = 'http://80241e64.ngrok.io';
+  //private endpointUrl = 'http://app.test:8080/toulbar2rest';
+  private endpointUrl = 'https://toulbar2rest.tk:8081/toulbar2rest';
+
 
   sendSolveExampleRequest(exampleNum) {
-    return this.http.get(this.endpointUrl + '/Example/' + exampleNum).subscribe(
+    return this.http.get(this.endpointUrl + '/example/' + exampleNum).subscribe(
       (response) => this.sendMessage(response),
       (error) => this.sendError(error)
     );
@@ -27,7 +31,7 @@ export class ServerService {
         'Content-Type':  'application/json'
       })
     };
-    return this.http.post(this.endpointUrl + '/File' , requestJSON).subscribe(
+    return this.http.post(this.endpointUrl + '/file' , requestJSON, httpOptions).subscribe(
       (response) => this.sendMessage(response),
       (error) => this.sendError(error)
     );
@@ -39,7 +43,7 @@ export class ServerService {
         'Content-Type':  'application/json'
       })
     };
-    return this.http.post(this.endpointUrl + '/wcsp' , json).subscribe(
+    return this.http.post(this.endpointUrl + '/problemloader/wcsp' , json, httpOptions).subscribe(
       (response) => this.sendMessage(response),
       (error) => this.sendError(error)
     );
@@ -48,10 +52,10 @@ export class ServerService {
   sendSolveWcnfRequest(json) {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json'
+        'Content-Type':  'application/json',
       })
     };
-    return this.http.post(this.endpointUrl + '/wcnf' , json).subscribe(
+    return this.http.post(this.endpointUrl + '/problemloader/wcnf' , json, httpOptions).subscribe(
       (response) => this.sendMessage(response),
       (error) => this.sendError(error)
     );

@@ -10,8 +10,8 @@ export class WscpRuleComponent implements OnInit {
   @Input() index: number;
   @Output() delete: EventEmitter<any> = new EventEmitter();
 
-  functions = ['AND', 'OR', 'DIFF'];
-  selectedFunction = 'AND';
+  functions = ['>=','>','<=','<','=','disj','sdisj','salldiff','sgcc','ssame','sregular'];
+  selectedFunction = 'disj';
   content = '';
   weight = 1;
 

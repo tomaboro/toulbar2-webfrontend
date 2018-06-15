@@ -19,9 +19,20 @@
       <li>Krzysztof Świder</li>
     </ul>
     <h3>Description: </h3>
-    <p>Suspendisse potenti. Curabitur lacinia, ex in condimentum semper, ligula dui finibus sapien, sit amet consequat diam lacus et dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi nec hendrerit nibh. Morbi imperdiet finibus metus vitae molestie. Sed lobortis odio leo. Pellentesque quis turpis suscipit dolor commodo convallis. Integer molestie tortor at justo maximus, ut pharetra nisi feugiat. Aenean gravida augue sit amet leo condimentum varius. Vivamus elementum metus lectus, sed tempus eros blandit ac. In eu cursus nisl. Suspendisse tincidunt ligula arcu. Pellentesque pellentesque libero vel metus lobortis, ut euismod orci suscipit. Aenean laoreet sodales nibh eu iaculis. Integer eget justo vel urna lacinia auctor. Pellentesque rutrum consectetur mauris eget maximus.</p>
+    <p>Main idea was to create user-friendly interface for Toulbar2. It is an open-source C++ solver for cost function networks. It solves various combinatorial optimization problems. More info about Toulbar2 can be find here: http://www7.inra.fr/mia/T/toulbar2/
+
+      Interface for the solver is available here:
+
+      website: https://kompilatorymock.firebaseapp.com/solver/loader
+      github: https://github.com/tomaboro/toulbar2-webfrontend
+      We decided to focus on two kinds of problems - Weighted Constraint Satisfactory Problem (wcsp) and Weighted Conjunctional Normal Form problem (wcnf). This application is a .NET Core server, which runs in docker on our server. Its main task can be write in four steps:
+
+      Use parameters from REST query to create a file with problem
+      Run Toulbar2 using created file to solve particular problem
+      Filter output from solver to get solution alongside with time spent on solving, memory consumption and percentage of rules that are satisfied
+      Return JSON with filtered parameters</p>
     <h3>Links: </h3>
-    <a href="http://www.github.com/tomaboro/git"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="75" height="75" title="Frontend sources"/></a>
+    <a href="http://www.github.com/tomaboro/toulbar2-webfrontend"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="75" height="75" title="Frontend sources"/></a>
     <a href="https://github.com/kswider/Projekt-SOA"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="75" height="75" title="Backend sources"/></a>
     <a href="https://docs.google.com/document/d/1gjgXB9xGj8n5DqT2knuSvLDTtgN3IOgfUPxW_l1s5Xc/edit"><img src="https://www.computerhope.com/jargon/g/google-docs.gif" width="75" height="75" title="Project documentation"/></a>
     <a href="http://www7.inra.fr/mia/T/toulbar2/"><img src="https://image.ibb.co/cN14Cd/toulbar2_logo.png"  title="toulbar2 webpage"></a>
