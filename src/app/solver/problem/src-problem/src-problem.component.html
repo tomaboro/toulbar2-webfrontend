@@ -19,6 +19,12 @@
       </div>
     </div>
   </div>
+  <div class="row" *ngIf="selectedFile != ''">
+    <div class="col">
+      <h4>File prewiev:</h4>
+      <textarea class="form-control" readonly style="min-height: 200px">{{selectedFileContent}}</textarea>
+    </div>
+  </div>
   <div class="row" style="margin-top: 15px;">
     <div class="row">
       <div class="col-sm-2"></div>

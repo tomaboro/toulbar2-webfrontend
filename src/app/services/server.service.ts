@@ -31,6 +31,7 @@ export class ServerService {
         'Content-Type':  'application/json'
       })
     };
+    console.log(requestJSON);
     return this.http.post(this.endpointUrl + '/file' , requestJSON, httpOptions).subscribe(
       (response) => this.sendMessage(response),
       (error) => this.sendError(error)

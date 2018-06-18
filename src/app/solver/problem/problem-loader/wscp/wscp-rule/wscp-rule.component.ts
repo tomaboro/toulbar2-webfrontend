@@ -10,7 +10,7 @@ export class WscpRuleComponent implements OnInit {
   @Input() index: number;
   @Output() delete: EventEmitter<any> = new EventEmitter();
 
-  functions = ['>=','>','<=','<','=','disj','sdisj','salldiff','sgcc','ssame','sregular'];
+  functions = ['>=', '>', '<=', '<', '=', 'disj', 'sdisj', 'salldiff', 'sgcc', 'ssame', 'sregular'];
   selectedFunction = 'disj';
   content = '';
   weight = 1;

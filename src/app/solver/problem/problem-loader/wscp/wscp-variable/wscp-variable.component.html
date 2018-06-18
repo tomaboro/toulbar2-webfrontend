@@ -1,5 +1,5 @@
 <div class="row">
-    Name: <input size="4" [value]="name">
+    Name: <input size="4" [(ngModel)]="name">
     Range: <a class="btn-sm btn-primary" (click)="decrementDomainSize()">-</a> {{domainSize}} <a
     class="btn-sm btn-primary" (click)="incrementDomainSize()">+</a>
     <input type="checkbox" class="form-check-input" [(ngModel)]="extreme"> Discrete
